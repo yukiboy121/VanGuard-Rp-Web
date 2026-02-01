@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-02-01
+
+### Removed
+
+- Removed particle background animation to improve performance and visual clarity.
+
 ## [1.1.1] - 2026-02-01
 
 ### Changed
