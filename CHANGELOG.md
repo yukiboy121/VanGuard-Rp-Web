@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-02-01
+
+### Added
+
+- Integrated Bootstrap 5 CSS framework.
+- Helper `css/video.css` and `js/video.js` for handling the hero video background.
+- New "Ready to Join Vanguard?" CTA section before the footer.
+- Hero section video background with YouTube IFrame API integration (autoplay, loop, muted).
+- Play/Pause control button for the hero background video.
+- Dark overlay to hero video for better text visibility.
+
+### Changed
+
+- Replaced hero section CTA buttons with a single "Join Our Discord" button.
+- Updated `.btn-discord` styling to match the site's "Monochrome Luxury" theme (White background, Black text).
+- Enforced `100vh` height on the hero section.
+- Reduced hero subtitle font size for better proportion.
+- **Fixed video sizing:** Implemented an aggressive 15% safety zoom (`scale(1.15)`) to eliminate cinematic black bars and letterboxing.
+- **Fixed video visibility:** Adjusted Z-index stacking (Video: 0, Grid Overlay: 1) to resolve layering conflicts with the global background.
+
+### Removed
+
+- Removed "Scroll Down" indicator and animation from the hero section.
+- Removed "Server Online" badge from the hero section.
+
 ## [1.1.4] - 2026-02-01
 
 ### Changed

@@ -1,0 +1,76 @@
+/* ============================================
+   VIDEO BACKGROUND
+============================================ */
+#hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none; /* Let clicks pass through to content */
+}
+
+#hero-video-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+#hero-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* Default 16:9 height */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Default 16:9 width */
+  transform: translate(-50%, -50%) scale(1.15); /* Slight zoom to hide cinematic bars */
+  pointer-events: none;
+}
+
+/* Ensure coverage for all screen ratios */
+@media (max-aspect-ratio: 16/9) {
+  #hero-player {
+    width: 177.77vh;
+    height: 100vh;
+  }
+}
+@media (min-aspect-ratio: 16/9) {
+  #hero-player {
+    width: 100vw;
+    height: 56.25vw;
+  }
+}
+
+.video-control-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.video-control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
