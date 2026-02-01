@@ -1025,17 +1025,38 @@ img {
   .mobile-menu-btn { 
     display: flex; 
     z-index: 1001;
-    margin-left: auto; /* Push to the right */
+    margin-left: auto;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .mobile-menu-btn span {
+    height: 2px;
+    background: #fff;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    border-radius: 2px;
+  }
+
+  /* Different line widths for a premium look */
+  .mobile-menu-btn span:nth-child(1) { width: 30px; }
+  .mobile-menu-btn span:nth-child(2) { width: 18px; }
+  .mobile-menu-btn span:nth-child(3) { width: 24px; }
+
+  .mobile-menu-btn.active span {
+    width: 30px !important;
   }
 
   .mobile-menu-btn.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
   }
   .mobile-menu-btn.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(10px);
   }
   .mobile-menu-btn.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
   }
 
   .hero-title { font-size: 2.5rem; }

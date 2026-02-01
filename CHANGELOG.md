@@ -6,9 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- **Functional Mobile Menu:** Implemented a slide-in navigation overlay with `backdrop-filter` blur.
-- **Hamburger Animation:** Added CSS transitions to transform the menu button into an "X" when active.
-- **Right-Aligned Menu:** Positioned the hamburger icon to the right side of the navbar for better ergonomics.
+- **Premium Mobile Menu UI:** Implemented a sophisticated slide-in navigation overlay with glassmorphism effects.
+- **Custom Hamburger Design:** Replaced the generic icon with a premium "offset line" design (varying widths) and an interactive bounce-back transition.
+- **Ergonomic Layout:** Right-aligned the mobile menu trigger for better one-handed usability.
 
 ### Changed
 
