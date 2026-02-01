@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-02-01
+
+### Added
+
+- **Discord Webhook Integration:** Implemented a job application system that sends data directly to a Discord server.
+- **Interactive Application Modal:** Created a modern, glassmorphism-styled popup form for departmental roles (EMS, VCPD, Mechanic).
+- **Form Status Feedback:** Added real-time feedback for users during the application submission process (Sending, Success, Error).
+
+### Changed
+
+- **Global Discord Link Update:** Updated all Discord invite links to the new server address (`ps7yTZhCDw`).
+- **Department CTA Behavior:** Modified "Apply" buttons in the Departments section to trigger the internal application form instead of external links.
+- **Footer Connectivity:** Updated social media placeholder links in the footer with live addresses and `target="_blank"` attributes.
+
 ## [1.4.0] - 2026-02-01
 
 ### Added

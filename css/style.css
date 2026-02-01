@@ -1091,3 +1091,132 @@ img {
   .section-title { font-size: 1.8rem; }
   .dept-carousel { height: 180px; }
 }
+
+/* ============================================
+   APPLICATION MODAL STYLES
+============================================ */
+.app-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.app-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  transform: translateY(30px);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.app-modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--primary-dim);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.modal-header p {
+  font-family: var(--font-mono);
+  color: var(--primary-dim);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--primary-dim);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  padding: 12px 15px;
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-dim);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form-status {
+  margin-top: 20px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  min-height: 24px;
+}
+
+.form-status.success { color: #00ff88; }
+.form-status.error { color: #ff4444; }
+
+.w-100 { width: 100%; justify-content: center; }

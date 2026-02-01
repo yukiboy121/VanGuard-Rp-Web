@@ -260,3 +260,90 @@ console.log(
   "%cWebsite loaded successfully!",
   "font-size: 14px; color: #7b2fff;",
 );
+
+// ============================================
+// APPLICATION MODAL LOGIC
+// ============================================
+const appModal = document.getElementById(""appModal"");
+const appModalContent = appModal.querySelector("".modal-content"");
+const modalTitle = document.getElementById(""modal-title"");
+const appliedDeptInput = document.getElementById(""appliedDept"");
+const applicationForm = document.getElementById(""applicationForm"");
+const formStatus = document.getElementById(""formStatus"");
+const closeBtn = document.querySelector("".modal-close"");
+const overlay = document.querySelector("".modal-overlay"");
+
+// Open modal
+document.querySelectorAll("".app-trigger"").forEach(btn => {
+    btn.addEventListener(""click"", () => {
+        const dept = btn.getAttribute(""data-dept"");
+        modalTitle.textContent = \Apply for \\;
+        appliedDeptInput.value = dept;
+        appModal.classList.add(""active"");
+        document.body.style.overflow = ""hidden""; // Prevent scroll
+        formStatus.textContent = """";
+        formStatus.className = ""form-status"";
+    });
+});
+
+// Close modal function
+function closeModal() {
+    appModal.classList.remove(""active"");
+    document.body.style.overflow = """";
+    applicationForm.reset();
+}
+
+closeBtn.addEventListener(""click"", closeModal);
+overlay.addEventListener(""click"", closeModal);
+
+// Handle Form Submission
+applicationForm.addEventListener(""submit"", async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(applicationForm);
+    const data = {
+        playerName: formData.get(""playerName""),
+        playerAge: formData.get(""playerAge""),
+        experience: formData.get(""experience""),
+        motivation: formData.get(""motivation""),
+        department: formData.get(""department"")
+    };
+
+    formStatus.textContent = ""Sending application..."";
+    formStatus.className = ""form-status"";
+
+    const webhookUrl = ""https://discord.com/api/webhooks/1467498495652135047/uQIsu2b7-n4PGE_vSu5Ny4zxTMlJNcBD8gIIQi3RPl_EIxM8ALyaFl-Ezo7-0IGJqYqB"";
+
+    const embed = {
+        title: ""New Job Application"",
+        color: 0xffffff, // White
+        fields: [
+            { name: ""Department"", value: data.department, inline: true },
+            { name: ""Discord Name/ID"", value: data.playerName, inline: true },
+            { name: ""Age"", value: data.playerAge, inline: true },
+            { name: ""Previous Experience"", value: data.experience },
+            { name: ""Motivation"", value: data.motivation }
+        ],
+        footer: { text: ""Vanguard Roleplay - Automated System"" },
+        timestamp: new Date()
+    };
+
+    try {
+        const response = await fetch(webhookUrl, {
+            method: ""POST"",
+            headers: { ""Content-Type"": ""application/json"" },
+            body: JSON.stringify({ embeds: [embed] })
+        });
+
+        if (response.ok) {
+            formStatus.textContent = ""Application sent successfully!"";
+            formStatus.className = ""form-status success"";
+            setTimeout(closeModal, 2000);
+        } else {
+            throw new Error(""Failed to send"");
+        }
+    } catch (error) {
+        formStatus.textContent = ""Error sending application. Please try again."";
+        formStatus.className = ""form-status error"";
+    }
+});

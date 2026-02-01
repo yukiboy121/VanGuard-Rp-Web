@@ -84,7 +84,7 @@
             </p>
             
             <div class="hero-buttons">
-                <a href="https://discord.gg/vanguardrp" class="btn btn-discord" target="_blank">
+                <a href="https://discord.gg/ps7yTZhCDw" class="btn btn-discord" target="_blank">
                     <i class="fab fa-discord btn-icon"></i>
                     Join Our Discord
                 </a>
@@ -119,7 +119,7 @@
                             <p class="section-description">
                                 Join the elite team of healthcare professionals in Vanguard City. From emergency response to surgical care, provide the critical support our citizens need 24/7.
                             </p>
-                            <a href="https://discord.gg/vanguardrp" class="btn btn-primary mt-4">Apply for EMS</a>
+                            <button class="btn btn-primary mt-4 app-trigger" data-dept="Medical Department">Apply for EMS</button>
                         </div>
                         <div class="dept-info" data-dept="police">
                             <span class="section-tag">Police Department</span>
@@ -127,7 +127,7 @@
                             <p class="section-description">
                                 Dedicated to maintaining order and justice. Join the VCPD to experience high-intensity pursuits, investigation, and community policing at its finest.
                             </p>
-                            <a href="https://discord.gg/vanguardrp" class="btn btn-primary mt-4">Apply for VCPD</a>
+                            <button class="btn btn-primary mt-4 app-trigger" data-dept="Police Department">Apply for VCPD</button>
                         </div>
                         <div class="dept-info" data-dept="mechanic">
                             <span class="section-tag">Mechanic</span>
@@ -135,7 +135,7 @@
                             <p class="section-description">
                                 The backbone of the city's automotive culture. Repair, customize, and maintain the finest vehicles in Vanguard City. Keep the city moving.
                             </p>
-                            <a href="https://discord.gg/vanguardrp" class="btn btn-primary mt-4">Apply for Mechanic</a>
+                            <button class="btn btn-primary mt-4 app-trigger" data-dept="Mechanic">Apply for Mechanic</button>
                         </div>
                     </div>
                 </div>
@@ -560,7 +560,7 @@
                     </div>
                 </div>
                 
-                <a href="https://discord.gg/vanguardrp" class="btn btn-discord" target="_blank">
+                <a href="https://discord.gg/ps7yTZhCDw" class="btn btn-discord" target="_blank">
                     <i class="fab fa-discord btn-icon"></i>
                     Join Discord Server
                 </a>
@@ -577,7 +577,7 @@
                     <p class="lead mb-4 text-white-50">Start your immersive roleplay journey today with thousands of other players.</p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <a href="fivem://connect/play.vanguardrp.com" class="btn btn-primary btn-lg px-4 gap-3">Connect Now</a>
-                        <a href="https://discord.gg/vanguardrp" class="btn btn-outline-light btn-lg px-4">Join Discord</a>
+                        <a href="https://discord.gg/ps7yTZhCDw" class="btn btn-outline-light btn-lg px-4">Join Discord</a>
                     </div>
                 </div>
             </div>
@@ -597,7 +597,7 @@
                         Experience the ultimate roleplay adventure with custom vehicles, jobs, heists, and an amazing community. Join thousands of players today.
                     </p>
                     <div class="footer-socials">
-                        <a href="#" class="footer-social"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/ps7yTZhCDw" class="footer-social" target="_blank"><i class="fab fa-discord"></i></a>
                         <a href="#" class="footer-social"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
                         <a href="#" class="footer-social"><i class="fab fa-tiktok"></i></a>
@@ -650,6 +650,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Application Modal -->
+    <div class="app-modal" id="appModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Job Application</h2>
+                <p id="modal-subtitle">Join the Vanguard City team</p>
+            </div>
+            <form id="applicationForm" class="app-form">
+                <input type="hidden" id="appliedDept" name="department">
+                <div class="form-group">
+                    <label for="playerName">Discord Name / ID</label>
+                    <input type="text" id="playerName" name="playerName" placeholder="e.g. JohnDoe#1234" required>
+                </div>
+                <div class="form-group">
+                    <label for="playerAge">Age</label>
+                    <input type="number" id="playerAge" name="playerAge" min="15" max="99" required>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Previous Experience</label>
+                    <textarea id="experience" name="experience" placeholder="Tell us about your experience in this role..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="motivation">Why do you want to join?</label>
+                    <textarea id="motivation" name="motivation" placeholder="Your motivation for joining this department..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+            </form>
+            <div id="formStatus" class="form-status"></div>
+        </div>
+    </div>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="js/video.js"></script>
