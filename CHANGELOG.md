@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-02-01
+
+### Added
+
+- **Functional Mobile Menu:** Implemented a slide-in navigation overlay with `backdrop-filter` blur.
+- **Hamburger Animation:** Added CSS transitions to transform the menu button into an "X" when active.
+- **Right-Aligned Menu:** Positioned the hamburger icon to the right side of the navbar for better ergonomics.
+
+### Changed
+
+- **Comprehensive Responsiveness:** Refined layouts for Hero, About, Stats, Features, Staff, Gallery, and Footer sections.
+- **Improved Typography:** Scaled font sizes and adjusted spacing for smaller screens to prevent overflow and enhance readability.
+- **Button Optimization:** Stacked hero buttons vertically on mobile for better touch targeting.
+- **Responsive Grids:** Updated Stats and Staff grids to adapt from 4 columns to 1-2 columns on mobile.
+
+### Fixed
+
+- **Horizontal Scrolling:** Resolved overflow issues across the entire site for windows widths down to 320px.
+
 ## [1.3.0] - 2026-02-01
 
 ### Added
