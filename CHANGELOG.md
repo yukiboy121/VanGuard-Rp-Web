@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Reduced hero subtitle font size for better proportion.
 - **Fixed video sizing:** Implemented an aggressive 15% safety zoom (`scale(1.15)`) to eliminate cinematic black bars and letterboxing.
 - **Fixed video visibility:** Adjusted Z-index stacking (Video: 0, Grid Overlay: 1) to resolve layering conflicts with the global background.
+- **Improved autoplay support:** Added `playsinline` and robust state synchronization in `js/video.js` to ensure compatibility with iOS Safari and handle browser autoplay restrictions gracefully.
 
 ### Removed
 
